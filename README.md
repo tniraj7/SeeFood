@@ -1,3 +1,3 @@
 # SeeFood
 
-SeeFood app can detect the real world food images(not limited to food only) and classify them using ML model
+SeeFood app can detect the real world  images and classify them using ML model
