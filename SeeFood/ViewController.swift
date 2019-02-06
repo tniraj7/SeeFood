@@ -47,14 +47,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let request = VNCoreMLRequest(model: model) { (request, error) in
             
-            guard let results = request.results as? [VNCoreMLFeatureValueObservation] else {
+            guard let results = request.results as? [VNClassificationObservation] else {
                 fatalError("Model failed to process request")
             }
             
-            print(results)
+            if let firstResult = results.first {
+                self.navigationItem.title = firstResult.identifier as? String
+            }
         }
-        
-        
+       
         let handler = VNImageRequestHandler(ciImage: image)
         
         do {
