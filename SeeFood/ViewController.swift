@@ -64,7 +64,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print(error)
         }
     }
-
+    
+    @IBAction func chooseImageButton(_ sender: Any) {
+        
+    }
+    
     @IBAction func cameraTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
         
