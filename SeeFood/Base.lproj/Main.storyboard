@@ -19,28 +19,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oCy-ew-iKI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="311"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2t-rE-91h" userLabel="chooseImage">
-                                <rect key="frame" x="80" y="318" width="220" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-1" maxY="-1"/>
-                                <state key="normal" title="Pick image from library"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eh-xu-McR">
+                                <rect key="frame" x="134" y="466" width="106" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Try again"/>
                                 <connections>
-                                    <action selector="chooseImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lZn-YI-O4o"/>
+                                    <action selector="tryAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zW0-Pw-mbg"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I2t-rE-91h" secondAttribute="bottom" constant="319" id="COv-Bd-JLS"/>
+                            <constraint firstItem="1eh-xu-McR" firstAttribute="centerX" secondItem="oCy-ew-iKI" secondAttribute="centerX" id="4ES-2t-Sl1"/>
+                            <constraint firstItem="1eh-xu-McR" firstAttribute="top" secondItem="oCy-ew-iKI" secondAttribute="bottom" constant="91" id="QJx-Nh-uzd"/>
                             <constraint firstItem="oCy-ew-iKI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xva-bU-DVu"/>
                             <constraint firstItem="oCy-ew-iKI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aFB-0X-mQN"/>
                             <constraint firstItem="oCy-ew-iKI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cEE-BV-uJg"/>
-                            <constraint firstItem="I2t-rE-91h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="iYo-Fc-swy"/>
-                            <constraint firstItem="oCy-ew-iKI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lKh-0r-Z7S"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I2t-rE-91h" secondAttribute="trailing" constant="75" id="va1-g1-BHW"/>
-                            <constraint firstItem="I2t-rE-91h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="254" id="w99-LM-PSK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1eh-xu-McR" secondAttribute="bottom" constant="168" id="gfO-zU-Ns3"/>
+                            <constraint firstItem="oCy-ew-iKI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-292" id="lKh-0r-Z7S"/>
+                            <constraint firstItem="1eh-xu-McR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="134" id="nPi-Bw-iV0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -52,7 +51,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cameraAccessory" destination="O2k-rO-kVZ" id="bXH-1w-rZB"/>
                         <outlet property="imageView" destination="oCy-ew-iKI" id="hxI-ba-FYB"/>
+                        <outlet property="tryAgainButton" destination="1eh-xu-McR" id="aFv-3A-jeX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

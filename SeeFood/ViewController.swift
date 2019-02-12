@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  SeeFood
-//
-//  Created by Tiwari, Niraj | Nero | OSPD on 2019/02/02.
-//  Copyright © 2019 Niraj Tiwari. All rights reserved.
-//
-
 import UIKit
 import CoreML
 import Vision
