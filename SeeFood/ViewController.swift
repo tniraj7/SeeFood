@@ -6,7 +6,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tryAgainButton: UIButton!
-    @IBOutlet weak var cameraAccessory: UIBarButtonItem!
     
     let imagePicker = UIImagePickerController()
     
@@ -20,9 +19,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         displayActionSheet(self)
     }
-    
-    
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -67,6 +63,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
+        imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
     }
     
