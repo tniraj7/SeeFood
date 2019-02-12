@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
+        tryAgainButton.isHidden = true
         displayActionSheet(self)
     }
     
@@ -38,7 +39,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             
             detect(image: ciimage)
-            displayActionSheet(self)
+            tryAgainButton.isHidden = true
         }
         imagePicker.dismiss(animated: true, completion: nil)
         
