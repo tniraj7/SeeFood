@@ -6,7 +6,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tryAgainButton: UIButton!
-    @IBOutlet weak var cameraAccessory: UIBarButtonItem!
     
     let imagePicker = UIImagePickerController()
     
