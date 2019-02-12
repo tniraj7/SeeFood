@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
-        tryAgainButton.isHidden = true
+        tryAgainButton?.isHidden = true
         
         displayActionSheet(self)
     }
@@ -82,7 +82,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.present(self.imagePicker, animated: true, completion: nil)
         }
         
-        let libraryAction = UIAlertAction(title: " Choose from Library", style: .default) { ACTION in
+        let libraryAction = UIAlertAction(title: "Photo Library", style: .default) { ACTION in
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true, completion: nil)
         }
