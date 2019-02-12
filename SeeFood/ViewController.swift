@@ -21,9 +21,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         displayActionSheet(self)
     }
     
-    
-    
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let userPickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
