@@ -39,7 +39,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             
             detect(image: ciimage)
-            tryAgainButton.isHidden = true
+            tryAgainButton.isHidden = false
+
         }
         imagePicker.dismiss(animated: true, completion: nil)
         
@@ -78,7 +79,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func displayActionSheet(_ sender: Any) {
         let optionsMenu = UIAlertController(title: "Choose an image source", message: nil, preferredStyle: .actionSheet)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { ACTION in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { ACTION in
             optionsMenu.dismiss(animated: true)
         }
         
@@ -99,5 +100,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.present(optionsMenu, animated: true, completion: nil)
     }
     
+    @IBAction func tryAgain(_ sender: Any) {
+        imageView.image = nil
+        navigationItem.title = nil
+        tryAgainButton.isHidden = true
+        displayActionSheet(UIButton())
+    }
 }
 
