@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
- 
+        displayActionSheet(self)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -65,13 +65,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    @IBAction func chooseImageButton(_ sender: Any) {
-        
-    }
-    
     @IBAction func cameraTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
         
+    }
+    
+    func displayActionSheet(_ sender: Any) {
+        let optionsMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        let libraryAction = UIAlertAction(title: " Choose from Library", style: .default)
+        
+        optionsMenu.addAction(cancelAction)
+        optionsMenu.addAction(libraryAction)
+        
+        self.present(optionsMenu, animated: true, completion: nil)
     }
     
 }
