@@ -5,6 +5,8 @@ import Vision
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tryAgainButton: UIButton!
+    @IBOutlet weak var cameraAccessory: UIBarButtonItem!
     
     let imagePicker = UIImagePickerController()
     
@@ -15,11 +17,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
         tryAgainButton.isHidden = true
+        
         displayActionSheet(self)
     }
     
-
-    @IBOutlet weak var tryAgainButton: UIButton!
+    
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -32,7 +35,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             detect(image: ciimage)
             tryAgainButton.isHidden = false
-
+            
         }
         imagePicker.dismiss(animated: true, completion: nil)
         
@@ -53,7 +56,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 self.navigationItem.title = firstResult.identifier as? String
             }
         }
-       
+        
         let handler = VNImageRequestHandler(ciImage: image)
         
         do {
@@ -65,7 +68,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func cameraTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
-        
     }
     
     func displayActionSheet(_ sender: Any) {
