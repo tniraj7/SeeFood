@@ -51,7 +51,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cameraAccessory" destination="O2k-rO-kVZ" id="bXH-1w-rZB"/>
                         <outlet property="imageView" destination="oCy-ew-iKI" id="hxI-ba-FYB"/>
                         <outlet property="tryAgainButton" destination="1eh-xu-McR" id="aFv-3A-jeX"/>
                     </connections>
