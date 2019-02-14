@@ -94,7 +94,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         optionsMenu.addAction(exitAction)
         optionsMenu.addAction(cancelAction)
         
-        self.present(optionsMenu, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(optionsMenu, animated: true, completion: nil)
+        }
     }
     
     @IBAction func tryAgain(_ sender: Any) {
