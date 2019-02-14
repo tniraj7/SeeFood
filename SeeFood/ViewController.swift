@@ -70,7 +70,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func displayActionSheet(_ sender: Any) {
         let optionsMenu = UIAlertController(title: "Choose an image source", message: nil, preferredStyle: .actionSheet)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { ACTION in
+        let exitAction = UIAlertAction(title: "Exit", style: .destructive) { ACTION in
+            optionsMenu.dismiss(animated: true)
+            exit(0)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { ACTION in
             optionsMenu.dismiss(animated: true)
         }
         
@@ -86,9 +91,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         optionsMenu.addAction(cameraAction)
         optionsMenu.addAction(libraryAction)
+        optionsMenu.addAction(exitAction)
         optionsMenu.addAction(cancelAction)
         
-        self.present(optionsMenu, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(optionsMenu, animated: true, completion: nil)
+        }
     }
     
     @IBAction func tryAgain(_ sender: Any) {
