@@ -70,9 +70,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func displayActionSheet(_ sender: Any) {
         let optionsMenu = UIAlertController(title: "Choose an image source", message: nil, preferredStyle: .actionSheet)
         
-        let cancelAction = UIAlertAction(title: "Exit", style: .destructive) { ACTION in
+        let exitAction = UIAlertAction(title: "Exit", style: .destructive) { ACTION in
             optionsMenu.dismiss(animated: true)
             exit(0)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { ACTION in
+            optionsMenu.dismiss(animated: true)
         }
         
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { ACTION in
@@ -87,6 +91,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         optionsMenu.addAction(cameraAction)
         optionsMenu.addAction(libraryAction)
+        optionsMenu.addAction(exitAction)
         optionsMenu.addAction(cancelAction)
         
         self.present(optionsMenu, animated: true, completion: nil)
