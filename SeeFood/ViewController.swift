@@ -68,34 +68,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func displayActionSheet(_ sender: Any) {
-        let optionsMenu = UIAlertController(title: "Choose an image source", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Choose an image source", message: nil, preferredStyle: .actionSheet)
         
         let exitAction = UIAlertAction(title: "Exit", style: .destructive) { ACTION in
-            optionsMenu.dismiss(animated: true)
+            actionSheet.dismiss(animated: true)
             exit(0)
         }
+        let exitIcon = UIImage(named: "exit")
+        exitAction.setValue(exitIcon, forKey: "image")
+        
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { ACTION in
-            optionsMenu.dismiss(animated: true)
+            actionSheet.dismiss(animated: true)
         }
         
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { ACTION in
             self.imagePicker.sourceType = .camera
             self.present(self.imagePicker, animated: true, completion: nil)
         }
+        let cameraIcon = UIImage(named: "camera")
+        cameraAction.setValue(cameraIcon, forKey: "image")
         
         let libraryAction = UIAlertAction(title: "Photo Library", style: .default) { ACTION in
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true, completion: nil)
         }
+        let libraryIcon = UIImage(named: "gallery")
+        libraryAction.setValue(libraryIcon, forKey: "image")
         
-        optionsMenu.addAction(cameraAction)
-        optionsMenu.addAction(libraryAction)
-        optionsMenu.addAction(exitAction)
-        optionsMenu.addAction(cancelAction)
-        
+        actionSheet.addAction(cameraAction)
+        actionSheet.addAction(libraryAction)
+        actionSheet.addAction(exitAction)
+        actionSheet.addAction(cancelAction)
+
         DispatchQueue.main.async {
-            self.present(optionsMenu, animated: true, completion: nil)
+            self.present(actionSheet, animated: true, completion: nil)
         }
     }
     
