@@ -4,6 +4,25 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Camera</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutItemCamera</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Open Camera</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Share</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutItemShare</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Share MLFun</string>
+		</dict>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string>ML Fun</string>
 	<key>CFBundleExecutable</key>
