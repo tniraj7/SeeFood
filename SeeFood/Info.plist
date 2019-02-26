@@ -8,19 +8,19 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemType</key>
-			<string>Camera</string>
+			<string>$(PRODUCT_BUNDLE_INDENTIFIER).CapturePhoto</string>
 			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutItemCamera</string>
+			<string>UIApplicationShortcutIconTypeCapturePhoto</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Open Camera</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemType</key>
-			<string>Share</string>
+			<string>$(PRODUCT_BUNDLE_INDENTIFIER).Share</string>
 			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutItemShare</string>
+			<string>UIApplicationShortcutIconTypeShare</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Share MLFun</string>
+			<string>Share</string>
 		</dict>
 	</array>
 	<key>CFBundleDisplayName</key>
