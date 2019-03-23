@@ -1,6 +1,7 @@
 import UIKit
 import CoreML
 import Vision
+import NotificationBannerSwift
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -29,7 +30,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 fatalError("Could not convert UIImage into CIImage")
             }
             
-            detect(image: ciimage)
+            let title: String = detect(image: ciimage)
+            let banner = NotificationBanner(title: title, style: .success)
+            banner.show(bannerPosition: .bottom)
             tryAgainButton.isHidden = false
             
         }
@@ -37,7 +40,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    func detect(image: CIImage) {
+    func detect(image: CIImage) -> String {
+        
+        var title = String()
+        
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
             fatalError("Loading CoreML model failed !!")
         }
@@ -49,7 +55,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             
             if let firstResult = results.first {
-                self.navigationItem.title = firstResult.identifier as? String
+                title = (firstResult.identifier as? String)!
             }
         }
         
@@ -60,6 +66,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         } catch {
             print(error)
         }
+        
+        return title
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
@@ -111,6 +119,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         navigationItem.title = nil
         tryAgainButton.isHidden = true
         displayActionSheet(UIButton())
+    }
+}
+
+extension ViewController : NotificationBannerDelegate {
+    func notificationBannerWillAppear(_ banner: BaseNotificationBanner) {
+        
+    }
+    
+    func notificationBannerDidAppear(_ banner: BaseNotificationBanner) {
+        
+    }
+    
+    func notificationBannerWillDisappear(_ banner: BaseNotificationBanner) {
+        
+        
+    }
+    
+    func notificationBannerDidDisappear(_ banner: BaseNotificationBanner) {
+        
     }
 }
 
