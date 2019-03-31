@@ -17,7 +17,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
         tryAgainButton?.isHidden = true
-        
+ 
+    }
+    override func viewWillAppear(_ animated: Bool) {
         displayActionSheet(self)
     }
     
