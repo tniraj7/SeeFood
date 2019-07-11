@@ -80,14 +80,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func displayActionSheet(_ sender: Any) {
         let actionSheet = UIAlertController(title: "Choose an image source", message: nil, preferredStyle: .actionSheet)
         
-        let exitAction = UIAlertAction(title: "Exit", style: .destructive) { ACTION in
-            actionSheet.dismiss(animated: true)
-            exit(0)
-        }
-        let exitIcon = UIImage(named: "exit")
-        exitAction.setValue(exitIcon, forKey: "image")
-        
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { ACTION in
             actionSheet.dismiss(animated: true)
         }
@@ -108,7 +100,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         actionSheet.addAction(cameraAction)
         actionSheet.addAction(libraryAction)
-        actionSheet.addAction(exitAction)
         actionSheet.addAction(cancelAction)
 
         DispatchQueue.main.async {
