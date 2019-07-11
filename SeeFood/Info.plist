@@ -44,9 +44,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>We need access to media library</string>
+	<string>MLFun would like to access to media library</string>
 	<key>NSCameraUsageDescription</key>
-	<string>We need your camera permission</string>
+	<string>MLFun would need your camera permission</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
